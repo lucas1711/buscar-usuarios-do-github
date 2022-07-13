@@ -29,6 +29,26 @@ const screen = {
                                            <h2>Repositórios</h2>
                                            <ul>${repositoriesItens}</ul>
                                            </div>`
+                                
+        }
+
+        if(user.events.length > 0){
+            let eventsItens = ''
+            user.events.forEach(event => {
+                if(event.payload){
+                    if(event.payload.commits){
+                        const commits = event.payload.commits
+                        const commitsList = commits.map(commit => `<span>${commit.message}</span>`)
+
+                        eventsItens += `<li><strong>${event.repo.name}:</strong> ${commitsList}</li>`
+                    }
+                }
+            })
+
+            this.userProfile.innerHTML += `<div class="events section">
+                                            <h2>Atividades</h2>
+                                            <ul>${eventsItens}</ul>
+                                           </div>`
         }
     },
     renderNotFound() {
