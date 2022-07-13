@@ -19,24 +19,33 @@ const screen = {
                                  </div>
                               </div>`
 
-        let repositoriesItens = " "
-        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}"
-        target="_blank">${repo.name}</a></li>`)
+        if (user.repositories.length > 0){
+            console.log(user.repositories) 
+            let repositoriesItens = " "
+            user.repositories.forEach(repo =>
+                repositoriesItens += `<li><a href="${repo.html_url}target="_blank">
+                                        <h4>${repo.name}</h4>
+                                        <i class="fa-solid fa-code-fork"> ${repo.forks_count}</i>
+                                        <i class="fa-solid fa-star"> ${repo.stargazers_count}</i>
+                                        <i class="fa-solid fa-eye"> ${repo.watchers_count}</i>
+                                        <i class="fa-solid fa-laptop-code"> ${repo.language ?? 'Sem linguagem'}</i>
+                                      </a></li>`)
 
 
-        if (user.repositories.length > 0) {
             this.userProfile.innerHTML += `<div class="repositories section">
                                            <h2>Repositórios</h2>
                                            <ul>${repositoriesItens}</ul>
                                            </div>`
-                                
+
         }
 
-        if(user.events.length > 0){
+
+
+        if (user.events.length > 0) {
             let eventsItens = ''
             user.events.forEach(event => {
-                if(event.payload){
-                    if(event.payload.commits){
+                if (event.payload) {
+                    if (event.payload.commits) {
                         const commits = event.payload.commits
                         const commitsList = commits.map(commit => `<span>${commit.message}</span>`)
 

@@ -166,6 +166,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
 }
 
 .container .profile-data .repositories ul li a{
@@ -175,15 +176,24 @@ main {
   display: block;
   border-radius: 7px;
   transition: 0.3s ease-in-out;
+  background-color: #009788;
+  color: #fff;
 }
 
 .container .profile-data .repositories ul li a:hover{
-  background-color:hotpink;
-  color: #fff
+  transform: scale(1.1);
 }
 
-.container .profile-data.hide{
-  display: none;
+.container .profile-data .repositories ul li a h4{
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.container .profile-data .repositories ul li a i{
+  display: inline-block;
+  font-style: normal;
+  padding: 5px;
 }
 
 
