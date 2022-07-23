@@ -5,7 +5,7 @@
 <br>
 
 ## Versão Desktop 💻
-projeto consumindo a api do github e mostrando na tela as informações de um asuario. 
+projeto consumindo a api do github e mostrando na tela as informações de um usuário. 
 
 ![buscador-de-usuarios desktop](https://user-images.githubusercontent.com/66094966/179246321-30237a90-ec33-4088-bb20-391ffe7375f8.gif)
 
